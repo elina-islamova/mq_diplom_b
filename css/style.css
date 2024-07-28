@@ -11,6 +11,9 @@
   font-style: bold;
   font-display: swap;
 }
+/* html {
+  font-size: 62.5%;
+} */
 body {
   margin: 0 auto;
   font-family: "OpenSans-Regular", "OpenSans-Bold", Arial, san-serif;
@@ -82,7 +85,7 @@ p {
 
 .hamburger {
   display: none; 
-
+ 
 }
 
 .menu_item:not(:last-child) {
@@ -259,6 +262,9 @@ p {
   text-transform: uppercase;
   margin-top: 17px;
 }
+.top_trend:hover {
+  color: #baa566;
+}
 
 /* Основная часть */
 .wrp {
@@ -294,9 +300,11 @@ p {
 }
 .post_img-content {
   display: inline-block;
-  background-color: #eff6f1;
+  background-color: #ffffff;
+  height: 100%;
   width: 389px;
-  /* min-width: 333px; */
+  min-width: 333px;
+  min-height: 200px;   /* чтобы не ломалась вертска */
   margin-right: 30px;
 }
 .post_content_first {
@@ -772,7 +780,7 @@ p {
 .img_product {
   min-height: 205px;
   min-width: 295px;
-  background-color: #eff6f1;
+  background-color: #ffffff;
 
 }
 .subtitle_product {
@@ -936,14 +944,14 @@ p {
 }
 
 .popup {
-  display: flex;
-  flex-direction: column;
-  background-color: #fff;
-
-  width: 386px;
- 
-  padding: 50px 30px;
-  position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    max-width: 330px;
+    height: 518px;
+    padding: 48px 30px 20px;
+    position: fixed;
+    top: 245px;
   
 }
 .popup_title {
@@ -965,40 +973,44 @@ p {
 }
 .popup_close {
   position: absolute;
-  right: 5px;
-  top: -30px;
+  right: 1px;
+  top: -29px;
+  bottom: 5px;
   cursor: pointer;
 }
 
 .popup_svg {
-  width: 20px;
-  height: 20px;
+  width: 17px;
+  height: 17px;
 }
 
 .form {
-  margin-top: 30px;
+  margin-top: 25px;
 }
 .select_group {
   position: relative;
 }
 .text_select {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   font-size: 13px;
   font-family: OpenSans, sans-serif;
   font-weight: 400;
   color: #0f0d0e;
+  padding: 0;
 }
-
+.text_select-second {
+  margin-bottom: 4px;
+}
 .attendance {
   display: inline-block;
   width: 100%;
   height: 50px;
-  padding-left: 10px;
-  padding-right: 25px;
+  /* margin-top: 11px; */
+ padding: 6px 25px 10px 18px;
   border: none;
   background-color: #f3f7f6;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   cursor: pointer;
   font-size: 13px;
   font-weight: 400;
@@ -1016,13 +1028,14 @@ p {
   position: absolute;
   width: 10px;
   height: 16px;
-  right: 10px;
+  right: 14px;
   top: 40px;
   z-index: 5;
 }
 
 .radio_box {
-  margin-bottom: 37px;
+  margin-top: 8px;
+  margin-bottom: 30px;
 }
 .checkbox {
   appearance: none;
@@ -1031,6 +1044,7 @@ p {
   -o-appearance: none;
   display: none;
   margin: 0;
+  padding: 0;
 }
 .checkbox_text {
   font-size: 13px;
@@ -1060,7 +1074,7 @@ p {
 }
 
 .checkbox_group:nth-child(n + 2) {
-  margin-left: 15px;
+  margin-left: 14px;
 }
 
 .checkbox:checked + .checkbox_text::before {
@@ -1069,10 +1083,10 @@ p {
 
 textarea {
   width: 100%;
+  box-sizing: border-box;
   height: 130px;
   background-color: #f3f7f6;
-  padding-left: 10px;
-  padding-top: 15px;
+  padding: 20px;
   font-size: 12px;
   font-weight: 400;
   resize: none;
@@ -1082,9 +1096,12 @@ textarea {
   cursor: pointer;
   font-weight: normal;
 }
+.textarea:focus {
+  border: 1px solid #b59f5b;
+}
 .button_form {
   display: block;
-  margin-top: 30px;
+  margin-top: 22px;
   background-color: #b59f5b;
   width: 100%;
   height: 50px;
@@ -1151,15 +1168,13 @@ textarea {
   .top_trend {
     
     font-size: 16px;
-    
-  
 } 
 .title_content {
-
-  margin: 25px 24px 15px 20px;
-  padding: 33px 5px 32px 32px;
+  margin: 24px 20px 15px 20px;
+  padding: 30px 25px 28px 32px;
 
 }
+
 .wrp {
   margin: auto;
   /* width: 90%; */
@@ -1170,11 +1185,12 @@ textarea {
 }
 .content {
   justify-content: flex-start;
-  gap: 5%;
+  gap: 1%;
+  padding: 45px 0 0 35px;
 
 }
 .post {
-  width: 56%;
+  width: 53%;
   
 }
 .post_content {
@@ -1183,25 +1199,53 @@ textarea {
 
 }
 .post_content:nth-child(n + 2) {
-  margin-top: 22px;
+  margin-top: 42px;
 }
 .post_content:not(:last-child) {
   border-bottom: 3px solid #eeeeee;
 }
+.post_title {
+  font-size: 18px;
+}
+.add_info {
+
+  margin-top: 30px;
+  margin-bottom: 29px;
+}
+.post_info {
+  padding-bottom: 20px;
+}
+.products {
+  margin-top: 45px;
+}
 .products_items {
   flex-wrap: wrap;
-  padding: 0;
-  gap: 26px;
+  padding: 0 6%;
+  column-gap: 26px;
+  justify-content: scenter;
 }
 .product {
   width: calc((100% / 2) - 16px);
   
 }
 .product:nth-child(n+3) {
-  margin-top: 66px;
+  margin-top: 50px;
+}
+.product_title_text { 
+font-size: 18px;
+}
+.product_content {
+
+  margin-top: -13px;
+  outline-offset: 19px;
+  padding: 10% 0 0 0;
+}
+.product_description {
+  margin-top: 0;
+  line-height: 1.5;
 }
 .content_post {
-  margin-bottom: 22px;
+  margin-bottom: 2px;
 }
 .post_img-content {
   width: 100%;
@@ -1211,23 +1255,122 @@ textarea {
   margin-top: 17px;
 }
 .footer {
-  width: 100%;
+  padding: 0 35px;
+  margin-top: 50px;
 }
+.footer_social-services {
+  padding: 25px 0 25px 7px;
+}
+.footer_copyrights {
+  margin-top: 45px;
+  
 }
 
-@media (min-width: 641px) and (max-width: 725px) {
+.popup {
+
+  padding: 43px 28px 34px;
+  top: 200px;
+
+}
+.header_popup {
+  margin-top: 7px;
+}
+.popup_title {
+
+  font-size: 16px;
+
+}
+
+.form {
+  margin-top: 27px;
+}
+
+.text_select {
+ 
+  margin-bottom: 10px;
+
+  padding: 0;
+}
+.checkbox_text::before {
+
+  width: 25px;
+  height: 25px;
+  background-size: 25px;
+  margin-right: 5px;
+}
+.attendance {
+
+  height: 50px;
+
+ padding: 6px 25px 10px 18px;
+
+  margin-bottom: 30px;
+
+}
+.popup_svg {
+  width: 25px;
+  height: 25px;
+}
+.popup_close {
+
+  top: -38px;
+}
+.checkbox_text::before {
+  content: "";
+  display: inline-block;
+
+  width: 25px;
+  height: 25px;
+
+  background-image: url("../svg/form-empty-circle.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 25px;
+
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.radio_box {
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+.checkbox_group:nth-child(n + 2) {
+  margin-left: 29px;
+}
+.button_form {
+
+  margin-top: 22px;
+} 
+}
+@media (min-width: 641px) and (max-width: 751px ) 
+{
+  .products_items {
+    flex-wrap: wrap;
+    padding: 0 3%;
+  }
   .product {
     width: 100%;
-    flex-wrap: wrap;
-    
+    padding: 0;
   }
 
   .product:nth-child(n+2) {
-    margin-top: 66px;
+    margin-top: 43px;
   }
+  .product_content {
+   min-width: 180px;
+    margin-top: -15px;
+    min-height: 140px;
+  
+    outline: 3px solid #e1d9bd;
+    outline-offset: 14px;
+    padding: 10% 7px 12px;
 }
 
+}
 @media (max-width: 640px) {
+  p {
+    font-size: 14px;
+  }
   .header {
    
     background-image: url("../img/banner-mobile.jpg");
@@ -1235,7 +1378,13 @@ textarea {
     background-position: center top;
     background-size: cover;
     background-color: #000000;
+    padding: 0 15px 210px;
+
   }
+.wrap {
+  justify-content: space-between;
+  padding: 27px 0;
+}
 .menu_logo {
   display: none;
 }
@@ -1249,28 +1398,52 @@ textarea {
 .menu_logo-second {
   display: block;
   width: 267px;
-  margin-top: 181px;
+  margin-top: 135px;
   margin-left: auto;
   margin-right: auto;
 }
 .header_title {
   width: 100%;
   font-size: 26px;
-  margin-top: 43px;
+  margin-top: 35px;
+  line-height: 1.4;
 }
 .wrp {
   padding-left: 15px;
   padding-right: 15px;
 }
+.trend_items_container {
+margin-top: 27px;
+}
 .trend_item {
-
+  min-height: 231px;
   width: 100%;
   flex-wrap: wrap;
   }
+
+.aside_content {
+  
+  margin-top: 49px;
+}
+.trend_title {
+  font-size: 16px;
+  line-height: 0.5;
+}
+.title_content {
+  margin: 0 16px 15px 14px;
+  padding: 33px 5px 30px 20px;
+  line-height: 0.9;
+
+}
+.top_trend {
+  font-size: 16px;
+}
+
   .content {
     justify-content: flex-start;
     gap: 5%;
      flex-wrap: wrap;
+     padding: 40px 0;
   
   }
   .post {
@@ -1283,17 +1456,21 @@ textarea {
   border-bottom: 3px solid #eeeeee;
   }
   .post_content:nth-child(n + 2) {
-    margin-top: 22px;
+    margin-top: 33px;
+  }
+  .post_title {
+    font-size: 16px;
+    margin-top: 7px;
   }
   .subject_post {
-    margin-top: 17px;
+    margin-top: 10px;
   }
   .content_post > p:not(:first-child) {
-    margin-top: 0;
+    margin-top: 9px;
   }
 
   .add_info {
-    margin-bottom: 0;
+    margin-bottom: 16px;
     margin-top: 15px;
 
   }
@@ -1301,21 +1478,133 @@ textarea {
     width: 100%;
     margin: 0;
   }
+  /* .post_info {
+    padding: 0 0 23px;
+  } */
+  
   .side_bar {
     width: 100%;
-    margin: 43px auto 0;
+    margin: 39px auto 0;
     padding: 0;
   }
+  .new_post-title-first {
+    margin-top: 7px;
+}
+.distribution {
+  margin-top: 38px;
+}
 
+.tag_topics-title {
+
+  margin-top: 38px;
+ 
+}
+.categorias {
+  margin-top: 38px;
+}
+.products {
+  margin-top: 0;
+}
+.product_title_text {
+  font-size: 16px;
+}
   .products_items {
     flex-wrap: wrap;
-    
+    padding: 0 3%;
   }
   .product {
     width: 100%;
+    padding: 0;
   }
 
   .product:nth-child(n+2) {
-    margin-top: 59px;
+    margin-top: 43px;
   }
+  .product_content {
+   min-width: 180px;
+    margin-top: -15px;
+    min-height: 140px;
+  
+    outline: 3px solid #e1d9bd;
+    outline-offset: 14px;
+    padding: 10% 7px 12px;
 }
+
+.footer {
+  margin-top: 60px;
+}
+.footer_copyrights {
+  margin-top: 40px;
+  
+}
+.popup {
+
+
+  max-width: 386px;
+    
+  margin: 0 15px;
+  padding: 27px 25px;
+  top: 55px;
+
+}
+
+.popup_title {
+
+  font-size: 16px;
+
+}
+
+.form {
+  margin-top: 27px;
+}
+
+.text_select {
+ 
+  margin-bottom: 10px;
+
+  padding: 0;
+}
+.checkbox_text::before {
+
+  width: 25px;
+  height: 25px;
+  background-size: 25px;
+  margin-right: 5px;
+}
+.attendance {
+
+  height: 50px;
+
+ padding: 6px 25px 10px 18px;
+
+  margin-bottom: 30px;
+
+}
+.checkbox_text::before {
+  content: "";
+  display: inline-block;
+
+  width: 25px;
+  height: 25px;
+
+  background-image: url("../svg/form-empty-circle.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 25px;
+
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.radio_box {
+  margin-top: 5px;
+  margin-bottom: 3px;
+}
+.checkbox_group:nth-child(n + 2) {
+  margin-left: 29px;
+}
+.button_form {
+
+  margin-top: 22px;
+} 
+}
+
